@@ -103,12 +103,12 @@ namespace Lab1_Market
                         if (hasBalancing) continue;
                         foreach (var thing1 in U_Market.Things.FindAll(x => x is T))
                         {
-                            var thing = (IFood) thing1;
+                            var thing = (T) thing1;
                             if ((bool) thing.GetType().GetProperty(keyValuePair.Key).GetValue(thing, null))
                             {
                                 for (int i = 0; i < ii - keyValuePair.Value; i++)
                                 {
-                                    Foodstuffs.Add((T) thing);
+                                    Foodstuffs.Add(thing);
                                 }
 
                                 break;
