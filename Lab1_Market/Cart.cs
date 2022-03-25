@@ -5,24 +5,16 @@ using System.Linq;
 
 namespace Lab1_Market
 {
-    public class Cart<T> where T : IThing
+    public class Cart<T> where T : IFood
     {
         public List<IThing> filteredThings = new();
-        public List<T> cart = new();
+        public List<T> Foodstuffs = new();
 
         public void PrintThings()
         {
-            if (typeof(T) == typeof(IThing))
+            foreach (IThing thing in U_Market.Things)
             {
-                filteredThings.Add(new Pen());
-                filteredThings.Add(new Notebook());
-            }
-            else
-            {
-                foreach (IThing thing in U_Market.Things)
-                {
-                    if (thing is T) filteredThings.Add(thing);
-                }
+                if (thing is T) filteredThings.Add(thing);
             }
 
             while (true)
@@ -30,9 +22,9 @@ namespace Lab1_Market
                 Console.WriteLine("Main menu:");
                 Console.WriteLine("1 - Add things to cart");
                 Console.WriteLine("2 - Print cart");
-                if (typeof(T) != typeof(IThing)) Console.WriteLine("3 - Balansing cart");
+                Console.WriteLine("3 - Balancing cart");
 
-                int choose1 = Program.ReadLineOfRange(1, typeof(T) == typeof(IThing) ? 2 : 3);
+                int choose1 = Program.ReadLineOfRange(1, 3);
 
                 if (choose1 == 1)
                 {
@@ -54,7 +46,7 @@ namespace Lab1_Market
                         }
                         else
                         {
-                            cart.Add((T) filteredThings[choose - 1]);
+                            Foodstuffs.Add((T) filteredThings[choose - 1]);
                         }
                     }
                 }
@@ -64,7 +56,7 @@ namespace Lab1_Market
                 }
                 else if (choose1 == 3)
                 {
-                    if (cart.Count == 0)
+                    if (Foodstuffs.Count == 0)
                     {
                         Console.WriteLine("Your cart empty");
                         continue;
@@ -76,7 +68,7 @@ namespace Lab1_Market
                     cart1.Add("Carbohydrates", 0);
                     List<KeyValuePair<string, int>> cart2 = cart1.ToList();
 
-                    foreach (var thing1 in cart)
+                    foreach (var thing1 in Foodstuffs)
                     {
                         var thing = (IFood) thing1;
                         if (thing.Proteins) cart1["Proteins"] += 1;
@@ -94,7 +86,7 @@ namespace Lab1_Market
                         }
 
                         bool hasBalancing = false;
-                        List<T> lastCart = cart;
+                        List<T> lastCart = Foodstuffs;
                         foreach (var thing1 in lastCart)
                         {
                             var thing = (IFood) thing1;
@@ -102,7 +94,7 @@ namespace Lab1_Market
                             {
                                 for (int i = 0; i < ii - keyValuePair.Value; i++)
                                 {
-                                    cart.Add((T) thing);
+                                    Foodstuffs.Add((T) thing);
                                 }
 
                                 hasBalancing = true;
@@ -119,7 +111,7 @@ namespace Lab1_Market
                                 {
                                     for (int i = 0; i < ii - keyValuePair.Value; i++)
                                     {
-                                        cart.Add((T) thing);
+                                        Foodstuffs.Add((T) thing);
                                     }
                                     break;
                                 }
@@ -132,7 +124,7 @@ namespace Lab1_Market
 
         private void PrintCart()
         {
-            if (cart.Count == 0)
+            if (Foodstuffs.Count == 0)
             {
                 Console.WriteLine("Your cart empty");
                 return;
@@ -140,7 +132,7 @@ namespace Lab1_Market
 
             Dictionary<T, int> cart1 = new();
             Console.Write("In your cart: ");
-            foreach (T thing in cart)
+            foreach (T thing in Foodstuffs)
             {
                 if (!cart1.TryGetValue(thing, out int i))
                 {

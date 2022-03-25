@@ -13,8 +13,7 @@ namespace Lab1_Market
                 "Snacks",
                 "HealthyFood",
                 "SemiFinishedFood",
-                "All food",
-                "Any"
+                "All food"
             };
 
             Console.WriteLine("Welcome to U-Market!");
@@ -42,10 +41,6 @@ namespace Lab1_Market
 
                 case 4:
                     new Cart<IFood>().PrintThings();
-                    break;
-
-                case 5:
-                    new Cart<IThing>().PrintThings();
                     break;
             }
         }
