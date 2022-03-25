@@ -1,0 +1,16 @@
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.exe
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.deps.json
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.runtimeconfig.json
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.runtimeconfig.dev.json
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.dll
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\ref\Lab1_Market.dll
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\bin\Debug\net5.0\Lab1_Market.pdb
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.csproj.AssemblyReference.cache
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.AssemblyInfoInputs.cache
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.AssemblyInfo.cs
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.csproj.CoreCompileInputs.cache
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.dll
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\ref\Lab1_Market.dll
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.pdb
+C:\Users\kotge\RiderProjects\Lab1_Market\Lab1_Market\obj\Debug\net5.0\Lab1_Market.genruntimeconfig.cache
