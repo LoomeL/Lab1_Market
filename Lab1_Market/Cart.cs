@@ -66,7 +66,6 @@ namespace Lab1_Market
                     cart1.Add("Proteins", 0);
                     cart1.Add("Fats", 0);
                     cart1.Add("Carbohydrates", 0);
-                    List<KeyValuePair<string, int>> cart2 = cart1.ToList();
 
                     foreach (var thing1 in Foodstuffs)
                     {
@@ -87,7 +86,22 @@ namespace Lab1_Market
 
                         bool hasBalancing = false;
                         List<T> lastCart = Foodstuffs;
-                        foreach (var thing1 in lastCart)
+                        foreach (var thing in lastCart)
+                        {
+                            if ((bool) thing.GetType().GetProperty(keyValuePair.Key).GetValue(thing, null))
+                            {
+                                for (int i = 0; i < ii - keyValuePair.Value; i++)
+                                {
+                                    Foodstuffs.Add(thing);
+                                }
+
+                                hasBalancing = true;
+                                break;
+                            }
+                        }
+
+                        if (hasBalancing) continue;
+                        foreach (var thing1 in U_Market.Things.FindAll(x => x is T))
                         {
                             var thing = (IFood) thing1;
                             if ((bool) thing.GetType().GetProperty(keyValuePair.Key).GetValue(thing, null))
@@ -97,24 +111,7 @@ namespace Lab1_Market
                                     Foodstuffs.Add((T) thing);
                                 }
 
-                                hasBalancing = true;
                                 break;
-                            }
-                        }
-                        if (hasBalancing) continue;
-                        foreach (var thing1 in U_Market.Things)
-                        {
-                            if (thing1 is IFood)
-                            {
-                                var thing = (IFood) thing1;
-                                if ((bool) thing.GetType().GetProperty(keyValuePair.Key).GetValue(thing, null))
-                                {
-                                    for (int i = 0; i < ii - keyValuePair.Value; i++)
-                                    {
-                                        Foodstuffs.Add((T) thing);
-                                    }
-                                    break;
-                                }
                             }
                         }
                     }
